@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.renderscript.ScriptGroup;
+import android.text.InputType;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -15,8 +18,13 @@ import android.widget.TableRow;
 import android.widget.TableRow.LayoutParams;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.example.appbar.R.id.table;
 
 public class CadastroClientes extends Activity  {
     Button btnOk, btnCancel, btnAdd;
@@ -62,7 +70,7 @@ public class CadastroClientes extends Activity  {
                 TableLayout tl = (TableLayout) findViewById(R.id.table);
                 TableRow tr_head = new TableRow(CadastroClientes.this); //criou
                 tr_head.setId(R.id.row);
-                tr_head.setBackgroundColor(Color.BLUE);
+                tr_head.setBackgroundColor(Color.rgb(160,173,255));
                 tr_head.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,LayoutParams.WRAP_CONTENT));
 
                 //---------------------------ADICIONANDO SPINNER-------------------------------
@@ -72,19 +80,31 @@ public class CadastroClientes extends Activity  {
                 list = new ArrayList<String>();
                 list.add("Coca-Cola");
                 list.add("Cerveja");
-                list.add("Item 3");
-                list.add("Item 4");
-                list.add("Item 5");
+                list.add("Coxinha");
+                list.add("Empada");
+                list.add("Porção");
                 //produto.setOnItemClickListener();
 
                 adapter = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_spinner_item, list);
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 produto.setAdapter(adapter);
-                tr_head.addView(produto);
 
                 //---------------------------ADICIONANDO EDITTEXT-----------------------------
-               /* EditText qtd = new EditText(CadastroClientes.this);
-                tr_head.addView(produto);*/
+                EditText qtd = new EditText(CadastroClientes.this);
+                qtd.setGravity(Gravity.CENTER);
+                qtd.setHint("0");
+                qtd.setText("4");
+                qtd.setInputType(InputType.TYPE_CLASS_NUMBER);
+
+                //---------------------------ADICIONANDO TEXTVIEW-----------------------------
+                TextView preco = new TextView(CadastroClientes.this);
+                preco.setGravity(Gravity.CENTER);
+                preco.setHint("R$ 0,00");
+                preco.setText("R$ "+2.5*Integer.valueOf(qtd.getText().toString()));
+
+                tr_head.addView(produto);
+                tr_head.addView(qtd);
+                tr_head.addView(preco);
 
                 tl.addView(tr_head, new TableLayout.LayoutParams(
                         LayoutParams.FILL_PARENT,
@@ -134,7 +154,7 @@ public class CadastroClientes extends Activity  {
         });
 
 
-        this.text = (EditText) findViewById(R.id.editText);//t aai kkkkk pera
+        this.text = (EditText) findViewById(R.id.editText);
 
         if (!value.equals("false")){
             text.setText(value);

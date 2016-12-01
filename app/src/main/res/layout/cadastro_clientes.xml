@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -50,9 +48,9 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#efdd58"
             android:divider="#000000"
             android:dividerPadding="4dp"
+            android:background="#5DFF86"
             android:paddingTop="15dp"
             android:paddingBottom="15dp"
             android:showDividers="middle"
@@ -68,7 +66,7 @@
                 android:gravity="center"
                 android:textSize="40px"
                 android:textColor="#000000"
-                tools:ignore="HardcodedText,PxUsage" />
+                tools:ignore="HardcodedText,PxUsage"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -101,35 +99,6 @@
             android:baselineAligned="false"
             android:gravity="center"
             android:id="@+id/row">
-
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/spnA"
-                android:layout_marginEnd="20sp"
-                android:layout_marginTop="10px" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="B"
-                android:id="@+id/txtColB"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                tools:ignore="HardcodedText,PxUsage"
-                android:textSize="14sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="C"
-                android:id="@+id/txtColC"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                tools:ignore="HardcodedText,PxUsage"
-                android:textSize="35px" />
 
         </TableRow>
 
@@ -170,7 +139,7 @@
         android:stretchColumns="*"
         android:paddingTop="7dp"
         android:paddingBottom="7dp"
-        android:background="#efdd58"
+        android:background="#AAFFBF"
         tools:ignore="RtlHardcoded">
 
         <TableRow
@@ -178,6 +147,7 @@
             android:layout_height="wrap_content"
             android:baselineAligned="false"
             android:gravity="center"
+
             android:showDividers="middle"
             android:orientation="horizontal">
 
