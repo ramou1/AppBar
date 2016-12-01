@@ -24,7 +24,7 @@
             android:name=".CadastroClientes"
             android:label="@string/title_activity_cadastro_clientes"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Produtos"></activity>
+        <activity android:name=".Produtos" />
     </application>
 
 </manifest>

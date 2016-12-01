@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#CCCCCC"
+    android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+
+    <TextView
+        android:text="PRODUTOS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView10"
+        android:textSize="30sp"
+        android:layout_gravity="center"
+        android:textColor="#38543f"
+        android:textStyle="normal|bold"
+        android:layout_marginTop="20sp" />
+
+
+    <ExpandableListView
+        android:id="@+id/lvExp"
+        android:layout_width="match_parent"
+        android:listSelector="#5DFF86"
+        android:addStatesFromChildren="false"
+        android:alwaysDrawnWithCache="false"
+        android:headerDividersEnabled="false"
+        android:footerDividersEnabled="false"
+        android:hapticFeedbackEnabled="false"
+        style="@android:style/Widget.DeviceDefault.ExpandableListView"
+        android:background="#61916D"
+        android:layout_height="358dp" />
+
+    <Button
+        android:text="CONFIRMAR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnConfirmar"
+        android:layout_gravity="bottom" />
+
+    <Button
+        android:text="CANCELAR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnCancela"
+        android:elevation="3dp"
+        android:layout_gravity="bottom" />
+
+
+</LinearLayout>
